@@ -61,7 +61,7 @@ fi
 
 if [ "$1" = "repl" ]; then
     # If repl used leiningen.core then there'd be no way to bootstrap AOT
-    java -cp "$CLASSPATH" clojure.main
+    java -cp "$CLASSPATH" clojure.main ${@:2}
 elif [ "$1" = "self-install" ]; then
     echo "Downloading Leiningen now..."
     mkdir -p `dirname "$LEIN_JAR"`
