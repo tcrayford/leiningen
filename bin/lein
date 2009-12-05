@@ -59,6 +59,7 @@ for ARG in "$@"; do
 done
 
 if [ "$1" = "repl" ]; then
+    # TODO: move to clojure; start in :main ns
     RLWRAP=$(which rlwrap)
     # Can't use/don't need rlwrap in eshell
     if [ -x $RLWRAP -a ! $TERM = "dumb" ]; then

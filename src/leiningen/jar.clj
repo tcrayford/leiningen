@@ -56,6 +56,7 @@ the source .clj files. If project.clj contains a :main symbol, it will be used
 as the main-class for an executable jar."
   ([project jar-name]
      (compile/compile project)
+     ;; TODO: don't proceed if compilation fails.
      (let [jar-file (str (:root project) "/" jar-name)
            filespecs [{:type :bytes
                        :path (format "meta-inf/maven/%s/%s/pom.xml"
